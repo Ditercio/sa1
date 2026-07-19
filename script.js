@@ -1,15 +1,16 @@
 document.getElementById('leadForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Impede o envio padrão do formulário
 
-    // Coleta dos dados do formulário
+    // Coleta dos dados dos campos do formulário
     const formData = {
         nome: this.querySelector('input[type="text"]').value,
         email: this.querySelector('input[type="email"]').value,
         telefone: this.querySelector('input[type="tel"]').value,
-        intenção: this.querySelector('select').value
+        intencao: this.querySelector('select').value
     };
 
-    // Envio para o Webhook (Substitua pela sua URL de Webhook real)
+    // Envio para o Webhook do Make
+    // SUBSTITUA A LINHA ABAIXO PELA SUA URL REAL DO MAKE
     fetch('https://hook.us2.make.com/4jpcgqqup1dfaqroqnen4hmbj7wac4va', {
         method: 'POST',
         headers: {
@@ -18,12 +19,15 @@ document.getElementById('leadForm').addEventListener('submit', function(e) {
         body: JSON.stringify(formData)
     })
     .then(response => {
-        if (response.ok) {
-            // Redireciona para a página de obrigado após o sucesso
+        if(response.ok) {
+            // Sucesso: redireciona para a página de obrigado
             window.location.href = 'obrigado.html';
         } else {
-            alert('Houve um erro ao enviar. Tente novamente.');
+            alert('Houve um erro no envio. Tente novamente.');
         }
     })
-    .catch(error => console.error('Erro:', error));
+    .catch(error => {
+        console.error('Erro:', error);
+        alert('Erro de conexão com o servidor.');
+    });
 });

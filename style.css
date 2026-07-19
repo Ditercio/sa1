@@ -1,0 +1,14 @@
+
+/* Paleta: Azul Profundo, Branco, Cinza Neutro, Destaque Âmbar */
+:root {
+    --primary: #1a365d;
+    --accent: #d69e2e;
+    --bg: #f7fafc;
+    --text: #2d3748;
+}
+body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
+.container { max-width: 1000px; margin: auto; padding: 20px; }
+header { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
+.form-wrapper { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+input, select { display: block; width: 100%; margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+.cta-button { background: var(--accent); color: white; border: none; padding: 15px; width: 100%; cursor: pointer; font-size: 18px; font-weight: bold; }

@@ -10,7 +10,7 @@ document.getElementById('leadForm').addEventListener('submit', function(e) {
     };
 
     // Envio para o Webhook (Substitua pela sua URL de Webhook real)
-    fetch('https://hook.us1.make.com/sua-url-aqui', {
+    fetch('https://hook.us2.make.com/aoz53j1yt9bvkwt0uvkjlm5yo4wwv6wg', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

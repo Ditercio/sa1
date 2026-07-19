@@ -1,4 +1,4 @@
-document.getElementById('leadForm').addEventListener('submit', function(e) {
+document.getElementById('leadForm').addEventListener('submit', function (e) {
     e.preventDefault(); // Impede o envio padrão do formulário
 
     // Coleta dos dados dos campos do formulário
@@ -6,7 +6,7 @@ document.getElementById('leadForm').addEventListener('submit', function(e) {
         nome: this.querySelector('input[type="text"]').value,
         email: this.querySelector('input[type="email"]').value,
         telefone: this.querySelector('input[type="tel"]').value,
-        intencao: this.querySelector('select').value
+        intencao: this.querySelector('select[name="intencao"]').value
     };
 
     // Envio para o Webhook do Make
@@ -19,7 +19,7 @@ document.getElementById('leadForm').addEventListener('submit', function(e) {
         body: JSON.stringify(formData)
     })
     .then(response => {
-        if(response.ok) {
+        if (response.ok) {
             // Sucesso: redireciona para a página de obrigado
             window.location.href = 'obrigado.html';
         } else {

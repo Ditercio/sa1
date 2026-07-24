@@ -11,7 +11,7 @@ document.getElementById('leadForm').addEventListener('submit', function (e) {
 
     // Envio para o Webhook do Make
     // SUBSTITUA A LINHA ABAIXO PELA SUA URL REAL DO MAKE
-    fetch('https://hook.us2.make.com/4jpcgqqup1dfaqroqnen4hmbj7wac4va', {
+    fetch('https://hook.us2.make.com/mec677crhwps23m32zg8p0ay63ik4v27', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
